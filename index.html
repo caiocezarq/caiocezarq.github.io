@@ -1,27 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Caio Queiroz — Product Owner | AI Product Management</title>
-<meta name="description" content="Portfólio de Caio Queiroz — Product Owner evoluindo para AI Product Management. Projetos, cases e credenciais.">
+<meta name="description" content="Portfólio de Caio Queiroz — Product Owner evoluindo para AI Product Management. Projetos, cases de produto, AI Evals e credenciais verificadas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  (function() {
+    var saved = localStorage.getItem('theme');
+    var theme = saved ? saved : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
 <style>
-  :root{
+  /* Padrão: Modo Escuro */
+  :root,
+  [data-theme="dark"]{
+    --bg: #0E1116;
+    --bg-panel: #161B22;
+    --ink: #EAEEF4;
+    --ink-soft: #949DA9;
+    --line: #28303B;
+    --signal: #46B87E;      /* verde "medido / aprovado" — remete a benchmark passing */
+    --signal-soft: rgba(70, 184, 126, 0.14);
+    --credential: #D9A95B;  /* dourado — credenciais/certificações */
+    --credential-soft: rgba(217, 169, 91, 0.14);
+    --nav-bg: rgba(14, 17, 22, 0.88);
+    --radius: 3px;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Source Serif 4', serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  /* Modo Claro */
+  [data-theme="light"]{
     --bg: #F7F7F4;
     --bg-panel: #FFFFFF;
     --ink: #14181F;
     --ink-soft: #5B6270;
     --line: #DCDDE0;
-    --signal: #2F6F4E;      /* verde "medido / aprovado" — remete a benchmark passing */
+    --signal: #2F6F4E;
     --signal-soft: #E4EEE8;
-    --credential: #A8813F;  /* dourado apagado — credenciais/certificações */
+    --credential: #A8813F;
     --credential-soft: #F3ECDD;
-    --radius: 3px;
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Source Serif 4', serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --nav-bg: rgba(247, 247, 244, 0.92);
   }
 
   *{ box-sizing: border-box; }
@@ -34,6 +58,7 @@
     font-family: var(--font-body);
     font-size: 17px;
     line-height: 1.6;
+    transition: background-color .2s ease, color .2s ease;
   }
 
   a{ color: inherit; }
@@ -47,18 +72,24 @@
   /* ---------- NAV ---------- */
   nav{
     position: sticky; top:0; z-index: 10;
-    background: rgba(247,247,244,0.92);
-    backdrop-filter: blur(6px);
+    background: var(--nav-bg);
+    backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
+    transition: background-color .2s ease, border-color .2s ease;
   }
   nav .wrap{
     display:flex; align-items:center; justify-content:space-between;
     padding: 14px 28px;
+    gap: 12px;
   }
   .nav-mark{
     font-family: var(--font-mono);
     font-size: 13px;
     letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .nav-right{
+    display:flex; align-items:center; gap: 20px;
   }
   .nav-links{ display:flex; gap: 22px; list-style:none; margin:0; padding:0; }
   .nav-links a{
@@ -72,9 +103,36 @@
   }
   .nav-links a:hover{ color: var(--ink); border-color: var(--signal); }
 
-  @media (max-width: 640px){
-    .nav-links{ gap: 14px; }
+  .theme-toggle{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 5px 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color .15s ease, border-color .15s ease, background-color .15s ease;
+    white-space: nowrap;
+  }
+  .theme-toggle:hover{
+    color: var(--ink);
+    border-color: var(--signal);
+  }
+
+  @media (max-width: 720px){
+    nav .wrap{ padding: 12px 18px; }
+    .nav-right{ gap: 12px; }
+    .nav-links{ gap: 12px; }
     .nav-links a{ font-size: 11px; }
+    .theme-toggle{ font-size: 11px; padding: 4px 8px; }
+  }
+  @media (max-width: 520px){
+    .nav-mark{ font-size: 11px; }
+    .nav-links{ display: none; }
   }
 
   /* ---------- HERO ---------- */
@@ -117,10 +175,11 @@
     padding: 11px 18px;
     border-radius: var(--radius);
     border: 1px solid var(--ink);
-    transition: background .15s ease, color .15s ease;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
   }
   .btn-primary{ background: var(--ink); color: var(--bg); }
-  .btn-primary:hover{ background: var(--signal); border-color: var(--signal); }
+  .btn-primary:hover{ background: var(--signal); border-color: var(--signal); color: #0E1116; }
+  [data-theme="light"] .btn-primary:hover{ color: #FFFFFF; }
   .btn-ghost{ color: var(--ink); }
   .btn-ghost:hover{ background: var(--ink); color: var(--bg); }
 
@@ -216,7 +275,7 @@
 
   @media (max-width: 720px){ .about-grid{ grid-template-columns: 1fr; } }
 
-  /* projects */
+  /* projects & cases */
   .project-card{
     border: 1px solid var(--line);
     background: var(--bg-panel);
@@ -238,13 +297,28 @@
     font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft);
     border: 1px solid var(--line); border-radius: 20px; padding: 3px 10px;
   }
-  .project-links{ margin-top: 16px; display:flex; gap: 16px; }
+  .project-links{ margin-top: 16px; display:flex; gap: 16px; flex-wrap: wrap; }
   .project-links a{
     font-family: var(--font-mono); font-size: 12px; text-decoration:none;
     color: var(--ink); border-bottom: 1px solid var(--ink);
   }
+  .case-grid{
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px; margin: 18px 0;
+  }
+  .case-metric{
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+  }
+  .case-metric strong{
+    display:block; font-family: var(--font-mono); font-size: 12px; color: var(--signal);
+    margin-bottom: 4px;
+  }
+  .case-metric span{ font-size: 14.5px; color: var(--ink-soft); line-height: 1.45; display:block; }
 
-  /* case studies note */
+  /* callout */
   .callout{
     border: 1px dashed var(--line);
     border-radius: var(--radius);
@@ -286,26 +360,33 @@
 <nav>
   <div class="wrap">
     <div class="nav-mark">CAIO CEZAR QUEIROZ</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#cases">Case Studies</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#cases">Case Studies</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema claro ou escuro">
+        <span id="theme-icon">☀</span>
+        <span id="theme-label">Light</span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <div class="wrap">
 
   <header class="hero">
-    <div class="eyebrow">status: em evolução para AI Product Management</div>
+    <div class="eyebrow">Product Owner · SaaS B2B, ERP Integrations &amp; AI Product Management</div>
     <h1>Product Owner que transforma<br><span>ambiguidade em decisões mensuráveis.</span></h1>
-    <p class="hero-sub">7+ anos evoluindo produtos de automação comercial. Hoje, aplicando o mesmo rigor de avaliação a produtos com IA — de backlog a benchmark de modelos.</p>
+    <p class="hero-sub">7+ anos evoluindo produtos de automação comercial e integrações B2B. Hoje, aplicando o mesmo rigor de engenharia e dados a produtos com IA — de priorização de backlog a avaliação sistemática de LLMs (AI Evals).</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#projects">Ver projetos</a>
-      <a class="btn btn-ghost" href="/resume.pdf">Currículo (PDF)</a>
-      <a class="btn btn-ghost" href="https://www.linkedin.com/in/caiocezarq/">LinkedIn</a>
+      <a class="btn btn-primary" href="#projects">Ver projetos &amp; cases</a>
+      <a class="btn btn-ghost" href="/Caio_Queiroz_Curriculo.pdf" target="_blank" rel="noopener">Currículo PT (PDF)</a>
+      <a class="btn btn-ghost" href="/Caio_Queiroz_Resume.pdf" target="_blank" rel="noopener">Resume EN (PDF)</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/caiocezarq/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
 
     <!-- Elemento de assinatura: scorecard no estilo dos relatórios de benchmark do autor -->
@@ -315,50 +396,50 @@
         <span>escala: 0–100</span>
       </div>
       <div class="scorecard-row">
-        <span class="metric-label">Product Discovery</span>
-        <span class="metric-bar"><span style="width:88%"></span></span>
-        <span class="metric-score">88</span>
+        <span class="metric-label">Product Discovery &amp; Escopo</span>
+        <span class="metric-bar"><span style="width:90%"></span></span>
+        <span class="metric-score">90</span>
       </div>
       <div class="scorecard-row">
-        <span class="metric-label">Backlog & Roadmap</span>
+        <span class="metric-label">Backlog &amp; Roadmap B2B</span>
         <span class="metric-bar"><span style="width:92%"></span></span>
         <span class="metric-score">92</span>
       </div>
       <div class="scorecard-row">
-        <span class="metric-label">Integrações & APIs</span>
-        <span class="metric-bar"><span style="width:85%"></span></span>
-        <span class="metric-score">85</span>
+        <span class="metric-label">Integrações ERP, SQL &amp; APIs</span>
+        <span class="metric-bar"><span style="width:88%"></span></span>
+        <span class="metric-score">88</span>
       </div>
       <div class="scorecard-row">
-        <span class="metric-label">Avaliação de LLMs</span>
-        <span class="metric-bar"><span style="width:78%"></span></span>
-        <span class="metric-score">78</span>
+        <span class="metric-label">Avaliação de LLMs (AI Evals)</span>
+        <span class="metric-bar"><span style="width:82%"></span></span>
+        <span class="metric-score">82</span>
       </div>
       <div class="scorecard-row">
         <span class="metric-label">AI Product Management</span>
-        <span class="metric-bar"><span style="width:64%"></span></span>
-        <span class="metric-score">64 · em progresso</span>
+        <span class="metric-bar"><span style="width:76%"></span></span>
+        <span class="metric-score">76 · evolução contínua</span>
       </div>
     </div>
   </header>
 
   <section id="about">
     <div class="section-tag">[ sobre ]</div>
-    <h2>De implantação a Produto — e agora, IA</h2>
+    <h2>De implantação e integrações ERP a Produto — e agora, IA</h2>
     <div class="about-grid">
       <p class="lede">
-        Comecei em suporte e implantação de sistemas de força de vendas, integrando soluções a grandes ERPs.
-        Isso me deu uma base técnica que poucos Product Owners carregam: entendo dado, integração e regra de
-        negócio de dentro para fora — não só a partir de um board do Jira.
+        Construí minha trajetória em suporte especializado e implantação de sistemas de força de vendas integrados a grandes ERPs.
+        Isso me deu uma base técnica que poucos Product Owners carregam: entendo modelo de dados, APIs REST, infraestrutura em nuvem (AWS) e regras de
+        negócio de dentro para fora — não apenas a partir de um board no Jira.
         <br><br>
-        Hoje atuo como Product Owner, e venho aplicando esse mesmo raciocínio técnico à avaliação de modelos
-        de IA generativa, construindo frameworks próprios de comparação entre LLMs proprietários e open-weight.
+        Hoje atuo como Product Owner na Landix Sistemas e aplico esse mesmo raciocínio analítico à construção e avaliação de produtos com IA generativa,
+        desenvolvendo frameworks próprios em Python para comparar LLMs proprietários e open-weight sob ótica de qualidade, latência e custo.
       </p>
       <dl class="about-facts">
         <div class="fact"><dt>Papel atual</dt><dd>Product Owner — Landix Sistemas</dd></div>
-        <div class="fact"><dt>Foco</dt><dd>Automação comercial · AI Product Management</dd></div>
-        <div class="fact"><dt>Formação</dt><dd>Eng. da Computação — UFU</dd></div>
-        <div class="fact"><dt>Idiomas</dt><dd>Português (nativo) · Inglês (avançado, C1)</dd></div>
+        <div class="fact"><dt>Foco</dt><dd>Automação comercial B2B · AI Product Management</dd></div>
+        <div class="fact"><dt>Formação</dt><dd>Engenharia de Computação — UFU (2026)</dd></div>
+        <div class="fact"><dt>Idiomas</dt><dd>Português (nativo) · Inglês (avançado, TOEFL ITP C1)</dd></div>
       </dl>
     </div>
   </section>
@@ -366,94 +447,142 @@
   <section id="projects">
     <div class="section-tag">[ projetos ]</div>
     <h2>Projetos em destaque</h2>
-    <p class="lede">Trabalho aplicado, não apenas planejamento — do benchmark de modelos aos artefatos de produto.</p>
+    <p class="lede">Engenharia e visão de produto aplicadas a problemas reais de decisão técnica e priorização.</p>
 
     <div class="project-card">
       <div class="project-head">
-        <h3 class="project-title">LLM Comparison Benchmark</h3>
-        <span class="status-pill">concluído</span>
+        <h3 class="project-title">LLM Comparison &amp; Evaluation Benchmark</h3>
+        <span class="status-pill">ativo · open-source</span>
       </div>
-      <p>Framework próprio para avaliação comparativa de LLMs — modelos proprietários (Gemini) vs. open-weight
-      (LLaMA, Qwen, GPT-OSS) — usando métricas como BERTScore, ROUGE, BLEU, MMLU e HellaSwag. Documentado como
-      case de produto: metodologia, resultados e impacto para decisões reais de escolha de modelo.</p>
+      <p>Framework modular em Python para avaliação comparativa e reprodutível de LLMs — confrontando modelos proprietários (Google Gemini) e modelos open-weight
+      (LLaMA 3, Qwen 3, GPT-OSS via Groq) através de métricas léxicas/semânticas (BLEU, ROUGE, BERTScore), benchmarks de raciocínio (MMLU, HellaSwag) e relatórios de consistência/drift com EvidentlyAI.</p>
       <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">LLMs</span><span class="tag">Model Evaluation</span><span class="tag">Prompt Engineering</span>
+        <span class="tag">Python</span><span class="tag">AI Evals</span><span class="tag">LLMs</span><span class="tag">BERTScore &amp; MMLU</span><span class="tag">EvidentlyAI</span><span class="tag">Product Decision</span>
       </div>
       <div class="project-links">
-        <a href="https://github.com/caiocezarq/llm-comparison-benchmark">Repositório →</a>
-        <a href="#cases">Ler o case completo →</a>
+        <a href="https://github.com/caiocezarq/llm-comparison-benchmark" target="_blank" rel="noopener">Repositório no GitHub →</a>
+        <a href="#cases">Ler estudo de caso de produto ↓</a>
       </div>
     </div>
 
     <div class="project-card">
       <div class="project-head">
-        <h3 class="project-title">Product PRDs</h3>
-        <span class="status-pill wip">em construção</span>
+        <h3 class="project-title">B2B &amp; AI Product PRDs</h3>
+        <span class="status-pill wip">em estruturação</span>
       </div>
-      <p>Coleção curta e aprofundada de PRDs autorais — problema, discovery, métricas de sucesso, riscos e
-      trade-offs — escritos como exercício de portfólio para demonstrar raciocínio de produto ponta a ponta.</p>
+      <p>Coleção autoral de Product Requirements Documents (PRDs) unindo automação de força de vendas B2B e IA generativa — cobrindo descoberta de problema, arquitetura de contexto/RAG, seleção de modelo baseada em Evals, guardrails contra alucinação e métricas North Star.</p>
       <div class="project-tags">
-        <span class="tag">Product Discovery</span><span class="tag">PRD</span><span class="tag">Roadmap</span>
+        <span class="tag">Product Discovery</span><span class="tag">PRD</span><span class="tag">AI Sales Copilot</span><span class="tag">Unit Economics</span>
       </div>
       <div class="project-links">
-        <a href="#">Repositório (em breve) →</a>
+        <a href="https://github.com/caiocezarq" target="_blank" rel="noopener">Acompanhar no GitHub →</a>
       </div>
     </div>
   </section>
 
   <section id="cases">
     <div class="section-tag">[ case studies ]</div>
-    <h2>Estudos de caso</h2>
-    <p class="lede">Exercícios pessoais de product thinking aplicados a produtos que uso ou admiro — análises
-    hipotéticas, não auditorias reais ou trabalho realizado para essas empresas.</p>
-    <div class="callout">
-      // placeholder — adicionar aqui os estudos de caso conforme forem escritos.
-      // cada um deve deixar explícito no título: "Exercício de Product Thinking".
+    <h2>Estudos de caso &amp; Product Thinking</h2>
+    <p class="lede">Análises de decisão de produto baseadas em dados, engenharia de avaliação e trade-offs de negócio.</p>
+
+    <div class="project-card">
+      <div class="project-head">
+        <h3 class="project-title">Case #1 — Como escolher o LLM certo para o seu Produto: Proprietários vs. Open-Weight</h3>
+        <span class="status-pill">AI Product Management · Evals</span>
+      </div>
+      <p><strong>O Problema de Produto:</strong> Times de produto frequentemente escolhem modelos de linguagem por tentativa e erro manual ("vibe check" em poucos prompts). Em produção B2B, isso gera estouro de orçamento por token, alta latência na jornada do usuário ou regressões silenciosas quando o provedor atualiza o modelo.</p>
+      <div class="case-grid">
+        <div class="case-metric">
+          <strong>1. Qualidade Semântica</strong>
+          <span>Avaliação automatizada via BERTScore, ROUGE e BLEU para medir fidelidade de resposta em tarefas abertas de sumarização e suporte comercial.</span>
+        </div>
+        <div class="case-metric">
+          <strong>2. Raciocínio &amp; Domínio</strong>
+          <span>Execução padronizada de MMLU e HellaSwag para testar retenção de conhecimento multitarefa e coerência lógica sob restrições.</span>
+        </div>
+        <div class="case-metric">
+          <strong>3. Governança &amp; Trade-offs</strong>
+          <span>Ranking normalizado (min-max) + relatórios EvidentlyAI para apoiar decisões de <em>Model Routing</em> (ex.: Qwen/LLaMA via Groq para baixa latência/custo vs. Gemini para raciocínio complexo).</span>
+        </div>
+      </div>
+      <p style="margin-bottom:0;"><strong>Impacto para Decisão de Produto:</strong> Substitui opiniões subjetivas por uma matriz auditável de <em>Qualidade × Latência × Custo</em>, permitindo rotear tarefas simples para modelos open-weight de inferência rápida e reservar modelos maiores apenas onde o ganho de BERTScore/MMLU justifica o custo.</p>
+      <div class="project-links">
+        <a href="https://github.com/caiocezarq/llm-comparison-benchmark" target="_blank" rel="noopener">Ver código, métricas e relatórios no GitHub →</a>
+      </div>
     </div>
   </section>
 
   <section id="certifications">
     <div class="section-tag">[ certificações ]</div>
-    <h2>Certificações & credenciais</h2>
+    <h2>Certificações &amp; credenciais</h2>
     <ul class="cert-list">
-  <li>
-    <div>
-      <div class="cert-name">AI for Product Management</div>
-      <div class="cert-issuer">Pendo</div>
+      <li>
+        <div>
+          <div class="cert-name">AI for Product Management</div>
+          <div class="cert-issuer">Pendo · 2026</div>
+        </div>
+        <a class="cert-badge" href="https://www.credly.com/badges/c7aa65c8-5c2d-4eb7-9376-982b42160b48" target="_blank" rel="noopener" style="text-decoration:none;">verificado no Credly →</a>
+      </li>
+      <li>
+        <div>
+          <div class="cert-name">Scrum Foundation Professional Certification (SFPC™)</div>
+          <div class="cert-issuer">Certiprof · 2024</div>
+        </div>
+        <a class="cert-badge" href="https://www.credly.com/badges/67b080f3-25f2-41c7-b94a-610db9a120ba" target="_blank" rel="noopener" style="text-decoration:none;">verificado no Credly →</a>
+      </li>
+    </ul>
+    <div class="callout" style="margin-top:12px;">
+      Ver todas as credenciais verificadas em <a href="https://www.credly.com/users/caiocezarq" target="_blank" rel="noopener">credly.com/users/caiocezarq</a>
     </div>
-    <a class="cert-badge" href="https://www.credly.com/badges/c7aa65c8-5c2d-4eb7-9376-982b42160b48" style="text-decoration:none;">verificado →</a>
-  </li>
-  <li>
-    <div>
-      <div class="cert-name">Scrum Foundation Professional Certification (SFPC™)</div>
-      <div class="cert-issuer">Certiprof</div>
-    </div>
-    <a class="cert-badge" href="https://www.credly.com/badges/67b080f3-25f2-41c7-b94a-610db9a120ba" style="text-decoration:none;">verificado →</a>
-  </li>
-</ul>
-<div class="callout" style="margin-top:12px;">
-  Ver todas as credenciais verificadas em <a href="https://www.credly.com/users/caiocezarq">credly.com/users/caiocezarq</a>
-</div>
   </section>
 
   <footer id="contact">
     <div class="section-tag">[ contato ]</div>
-    <h2>Vamos conversar sobre produto e IA</h2>
-    <p class="lede">Aberto a conversas sobre produto, dados e IA aplicada.</p>
+    <h2>Vamos conversar sobre produto, dados e IA</h2>
+    <p class="lede">Aberto a conexões e oportunidades em Product Ownership, Technical PM e AI Product Management (Brasil e remoto internacional).</p>
     <div class="contact-row">
       <a href="mailto:caio.queiroz@outlook.com.br">caio.queiroz@outlook.com.br</a>
-      <a href="https://www.linkedin.com/in/caiocezarq/">LinkedIn</a>
-      <a href="https://github.com/caiocezarq">GitHub</a>
-      <a href="https://www.credly.com/users/caiocezarq">Credly</a>
-      <a href="https://linktr.ee/caiocezarq">Linktree</a>
+      <a href="https://www.linkedin.com/in/caiocezarq/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/caiocezarq" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.credly.com/users/caiocezarq" target="_blank" rel="noopener">Credly</a>
+      <a href="https://linktr.ee/caiocezarq" target="_blank" rel="noopener">Linktree</a>
+      <a href="/Caio_Queiroz_Curriculo.pdf" target="_blank" rel="noopener">Currículo PT (PDF)</a>
+      <a href="/Caio_Queiroz_Resume.pdf" target="_blank" rel="noopener">Resume EN (PDF)</a>
     </div>
-    <div class="fine">© <span id="year"></span> Caio Queiroz — construído com HTML/CSS puro, hospedado via GitHub Pages.</div>
+    <div class="fine">© <span id="year"></span> Caio Cezar Queiroz — construído com HTML/CSS puro, hospedado via GitHub Pages.</div>
   </footer>
 
 </div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function() {
+    var btn = document.getElementById('theme-toggle');
+    var icon = document.getElementById('theme-icon');
+    var label = document.getElementById('theme-label');
+
+    function updateButton(theme) {
+      if (theme === 'dark') {
+        icon.textContent = '☀';
+        label.textContent = 'Claro';
+      } else {
+        icon.textContent = '☾';
+        label.textContent = 'Escuro';
+      }
+    }
+
+    var current = document.documentElement.getAttribute('data-theme') || 'dark';
+    updateButton(current);
+
+    btn.addEventListener('click', function() {
+      var active = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      var next = active === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateButton(next);
+    });
+  })();
 </script>
 
 </body>
