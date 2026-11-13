@@ -3,10 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Caio Queiroz · Product Owner | AI Product Management</title>
-<meta name="description" content="Portfólio de Caio Queiroz, Product Owner com foco em SaaS B2B, integrações ERP e AI Product Management. Projetos, PRDs, avaliação de LLMs e credenciais verificadas.">
+<title>Caio Queiroz · Product Owner | SaaS B2B, ERP &amp; AI Product Management</title>
+<meta name="description" content="Portfólio de Caio Queiroz, Product Owner com atuação em plataformas SaaS B2B, integrações com ERPs e produtos com Inteligência Artificial.">
+<meta property="og:title" content="Caio Queiroz · Product Owner | SaaS B2B, ERP &amp; AI Product Management">
+<meta property="og:description" content="Product Owner em plataformas SaaS B2B e integrações ERP. Especificações técnicas (PRDs), avaliação de LLMs e estudos de caso de produto.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://caiocezarq.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>
   (function() {
     var saved = localStorage.getItem('theme');
@@ -15,567 +21,858 @@
   })();
 </script>
 <style>
-  /* Padrão: Modo Escuro */
+  /* Tema Escuro Principal: Midnight Black & Royal Blue (60/30/10) */
   :root,
-  [data-theme="dark"]{
-    --bg: #0E1116;
-    --bg-panel: #161B22;
-    --ink: #EAEEF4;
-    --ink-soft: #949DA9;
-    --line: #28303B;
-    --signal: #46B87E;      /* verde "medido / aprovado" */
-    --signal-soft: rgba(70, 184, 126, 0.14);
-    --credential: #D9A95B;  /* dourado — credenciais/certificações */
-    --credential-soft: rgba(217, 169, 91, 0.14);
-    --nav-bg: rgba(14, 17, 22, 0.88);
-    --radius: 3px;
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Source Serif 4', serif;
+  [data-theme="dark"] {
+    --bg: #060A12;
+    --bg-glow: radial-gradient(ellipse 85% 420px at 50% -80px, rgba(37, 99, 235, 0.22), rgba(6, 10, 18, 0) 75%);
+    --surface: #0C1322;
+    --surface-alt: #10192D;
+    --surface-hover: #142038;
+    --text: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --border: #1E293B;
+    --border-strong: #334155;
+    --primary: #2563EB;
+    --primary-hover: #3B82F6;
+    --accent: #60A5FA;
+    --accent-soft: rgba(59, 130, 246, 0.14);
+    --accent-border: rgba(96, 165, 250, 0.35);
+    --verified: #38BDF8;
+    --verified-soft: rgba(56, 189, 248, 0.12);
+    --nav-bg: rgba(6, 10, 18, 0.84);
+    --radius: 10px;
+    --radius-sm: 6px;
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
   }
 
-  /* Modo Claro */
-  [data-theme="light"]{
-    --bg: #F7F7F4;
-    --bg-panel: #FFFFFF;
-    --ink: #14181F;
-    --ink-soft: #5B6270;
-    --line: #DCDDE0;
-    --signal: #2F6F4E;
-    --signal-soft: #E4EEE8;
-    --credential: #A8813F;
-    --credential-soft: #F3ECDD;
-    --nav-bg: rgba(247, 247, 244, 0.92);
+  /* Tema Claro: Crisp Slate & Royal Blue */
+  [data-theme="light"] {
+    --bg: #F8FAFC;
+    --bg-glow: radial-gradient(ellipse 85% 380px at 50% -100px, rgba(37, 99, 235, 0.10), rgba(248, 250, 252, 0) 75%);
+    --surface: #FFFFFF;
+    --surface-alt: #F1F5F9;
+    --surface-hover: #EFF6FF;
+    --text: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+    --border: #E2E8F0;
+    --border-strong: #CBD5E1;
+    --primary: #1D4ED8;
+    --primary-hover: #2563EB;
+    --accent: #1D4ED8;
+    --accent-soft: rgba(29, 78, 216, 0.08);
+    --accent-border: rgba(29, 78, 216, 0.25);
+    --verified: #0284C7;
+    --verified-soft: rgba(2, 132, 199, 0.10);
+    --nav-bg: rgba(248, 250, 252, 0.88);
   }
 
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-  body{
-    margin:0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--font-body);
-    font-size: 17px;
-    line-height: 1.6;
+  body {
+    margin: 0;
+    background-color: var(--bg);
+    background-image: var(--bg-glow);
+    background-repeat: no-repeat;
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
     transition: background-color .2s ease, color .2s ease;
   }
 
-  a{ color: inherit; }
+  a { color: inherit; text-decoration: none; }
 
-  .wrap{
-    max-width: 920px;
+  .container {
+    max-width: 940px;
     margin: 0 auto;
     padding: 0 28px;
   }
 
-  /* ---------- NAV ---------- */
-  nav{
-    position: sticky; top:0; z-index: 10;
+  /* ---------- NAVEGAÇÃO ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
     background: var(--nav-bg);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-    transition: background-color .2s ease, border-color .2s ease;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
   }
-  nav .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    padding: 14px 28px;
-    gap: 12px;
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+    gap: 16px;
   }
-  .nav-mark{
-    font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15.5px;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
-  .nav-right{
-    display:flex; align-items:center; gap: 20px;
+  .brand-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-hover);
+    box-shadow: 0 0 10px var(--primary-hover);
   }
-  .nav-links{ display:flex; gap: 22px; list-style:none; margin:0; padding:0; }
-  .nav-links a{
-    font-family: var(--font-mono);
-    font-size: 13px;
-    text-decoration:none;
-    color: var(--ink-soft);
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
-    transition: color .15s ease, border-color .15s ease;
+  .brand span {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 13.5px;
   }
-  .nav-links a:hover{ color: var(--ink); border-color: var(--signal); }
-
-  .theme-toggle{
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--ink-soft);
-    background: var(--bg-panel);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 5px 10px;
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color .15s ease;
+  }
+  .nav-links a:hover {
+    color: var(--accent);
+  }
+  .theme-btn {
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 6px 12px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    transition: color .15s ease, border-color .15s ease, background-color .15s ease;
-    white-space: nowrap;
+    transition: all .15s ease;
   }
-  .theme-toggle:hover{
-    color: var(--ink);
-    border-color: var(--signal);
+  .theme-btn:hover {
+    color: var(--text);
+    border-color: var(--accent-border);
   }
 
-  @media (max-width: 720px){
-    nav .wrap{ padding: 12px 18px; }
-    .nav-right{ gap: 12px; }
-    .nav-links{ gap: 12px; }
-    .nav-links a{ font-size: 11px; }
-    .theme-toggle{ font-size: 11px; padding: 4px 8px; }
-  }
-  @media (max-width: 520px){
-    .nav-mark{ font-size: 11px; }
-    .nav-links{ display: none; }
+  @media (max-width: 680px) {
+    .brand span { display: none; }
+    .nav-links { display: none; }
   }
 
   /* ---------- HERO ---------- */
-  header.hero{ padding: 88px 0 56px; }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--signal);
-    background: var(--signal-soft);
-    border: 1px solid var(--signal);
-    border-radius: var(--radius);
-    padding: 4px 10px;
+  header.hero {
+    padding: 80px 0 64px;
+  }
+  .role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    padding: 5px 13px;
+    border-radius: 999px;
     margin-bottom: 22px;
   }
-  .eyebrow::before{ content:"●"; font-size: 8px; }
-
-  h1{
+  h1 {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(34px, 5.4vw, 54px);
-    line-height: 1.08;
-    letter-spacing: -0.01em;
-    margin: 0 0 18px;
+    font-weight: 800;
+    font-size: clamp(32px, 4.8vw, 48px);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 0 0 20px;
+    max-width: 22ch;
   }
-  h1 span{ color: var(--ink-soft); }
-
-  .hero-sub{
-    font-size: 19px;
-    color: var(--ink-soft);
-    max-width: 58ch;
+  h1 span {
+    color: var(--accent);
+  }
+  .hero-lead {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 62ch;
     margin: 0 0 32px;
+    line-height: 1.65;
   }
-
-  .hero-actions{ display:flex; gap: 14px; flex-wrap: wrap; }
-  .btn{
-    font-family: var(--font-mono);
-    font-size: 13px;
-    text-decoration: none;
-    padding: 11px 18px;
-    border-radius: var(--radius);
-    border: 1px solid var(--ink);
-    transition: background .15s ease, color .15s ease, border-color .15s ease;
-  }
-  .btn-primary{ background: var(--ink); color: var(--bg); }
-  .btn-primary:hover{ background: var(--signal); border-color: var(--signal); color: #0E1116; }
-  [data-theme="light"] .btn-primary:hover{ color: #FFFFFF; }
-  .btn-ghost{ color: var(--ink); }
-  .btn-ghost:hover{ background: var(--ink); color: var(--bg); }
-
-  /* ---------- SCORECARD (signature element) ---------- */
-  .scorecard{
-    margin-top: 56px;
-    border: 1px solid var(--line);
-    background: var(--bg-panel);
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-  .scorecard-head{
-    display:flex; justify-content:space-between; align-items:center;
-    padding: 12px 18px;
-    border-bottom: 1px solid var(--line);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--ink-soft);
-  }
-  .scorecard-row{
-    display:grid;
-    grid-template-columns: 1.4fr 2fr 1fr;
+  .hero-actions {
+    display: flex;
     gap: 12px;
-    align-items:center;
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--line);
-    font-family: var(--font-mono);
-    font-size: 13px;
-    opacity: 0;
-    transform: translateY(6px);
-    animation: rise .5s ease forwards;
-  }
-  .scorecard-row:last-child{ border-bottom:none; }
-  .scorecard-row:nth-child(2){ animation-delay: .05s; }
-  .scorecard-row:nth-child(3){ animation-delay: .12s; }
-  .scorecard-row:nth-child(4){ animation-delay: .19s; }
-  .scorecard-row:nth-child(5){ animation-delay: .26s; }
-
-  .metric-label{ color: var(--ink); }
-  .metric-bar{
-    height: 6px;
-    background: var(--line);
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-  }
-  .metric-bar span{
-    position:absolute; left:0; top:0; bottom:0;
-    background: var(--signal);
-    border-radius: 4px;
-  }
-  .metric-score{ text-align:right; color: var(--ink-soft); }
-
-  @keyframes rise{ to{ opacity:1; transform:none; } }
-  @media (prefers-reduced-motion: reduce){
-    .scorecard-row{ animation: none; opacity: 1; transform: none; }
-  }
-
-  @media (max-width: 640px){
-    .scorecard-row{ grid-template-columns: 1fr; gap: 6px; }
-    .metric-score{ text-align:left; }
-  }
-
-  /* ---------- SECTIONS ---------- */
-  section{ padding: 72px 0; border-top: 1px solid var(--line); }
-  .section-tag{
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--ink-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 10px;
-  }
-  h2{
-    font-family: var(--font-display);
-    font-size: clamp(24px, 3.2vw, 32px);
-    margin: 0 0 24px;
-  }
-  p.lede{ font-size: 18px; color: var(--ink-soft); max-width: 62ch; }
-
-  /* about */
-  .about-grid{
-    display:grid; grid-template-columns: 1.3fr 1fr; gap: 40px;
-    margin-top: 12px;
-  }
-  .about-facts{ display:flex; flex-direction:column; gap: 16px; }
-  .fact{ border-left: 2px solid var(--signal); padding-left: 14px; }
-  .fact dt{
-    font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft);
-    text-transform: uppercase; letter-spacing: .05em;
-  }
-  .fact dd{ margin: 2px 0 0; font-size: 15px; }
-
-  @media (max-width: 720px){ .about-grid{ grid-template-columns: 1fr; } }
-
-  /* projects & cases */
-  .project-card{
-    border: 1px solid var(--line);
-    background: var(--bg-panel);
-    border-radius: var(--radius);
-    padding: 28px;
-    margin-bottom: 20px;
-  }
-  .project-head{ display:flex; justify-content:space-between; align-items:flex-start; gap: 16px; flex-wrap: wrap; }
-  .project-title{ font-family: var(--font-display); font-size: 20px; font-weight: 600; margin: 0; }
-  .status-pill{
-    font-family: var(--font-mono); font-size: 11px;
-    padding: 3px 9px; border-radius: 20px;
-    border: 1px solid var(--signal); color: var(--signal); background: var(--signal-soft);
-    white-space: nowrap;
-  }
-  .status-pill.wip{ border-color: var(--credential); color: var(--credential); background: var(--credential-soft); }
-  .project-tags{ display:flex; gap:8px; flex-wrap:wrap; margin: 14px 0 0; }
-  .tag{
-    font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft);
-    border: 1px solid var(--line); border-radius: 20px; padding: 3px 10px;
-  }
-  .project-links{ margin-top: 16px; display:flex; gap: 16px; flex-wrap: wrap; }
-  .project-links a{
-    font-family: var(--font-mono); font-size: 12px; text-decoration:none;
-    color: var(--ink); border-bottom: 1px solid var(--ink);
-  }
-  .case-grid{
-    display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px; margin: 18px 0;
-  }
-  .case-metric{
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 12px 14px;
-  }
-  .case-metric strong{
-    display:block; font-family: var(--font-mono); font-size: 12px; color: var(--signal);
-    margin-bottom: 4px;
-  }
-  .case-metric span{ font-size: 14.5px; color: var(--ink-soft); line-height: 1.45; display:block; }
-
-  /* callout */
-  .callout{
-    border: 1px dashed var(--line);
-    border-radius: var(--radius);
-    padding: 16px 20px;
-    font-family: var(--font-mono);
-    font-size: 12.5px;
-    color: var(--ink-soft);
-    margin-top: 8px;
-  }
-
-  /* certifications */
-  .cert-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0; }
-  .cert-list li{
-    display:flex; justify-content:space-between; align-items:center; gap: 16px;
-    padding: 16px 0; border-bottom: 1px solid var(--line);
     flex-wrap: wrap;
   }
-  .cert-name{ font-size: 16px; }
-  .cert-issuer{ font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft); }
-  .cert-badge{
-    font-family: var(--font-mono); font-size: 11px;
-    padding: 3px 9px; border-radius: 20px;
-    border: 1px solid var(--credential); color: var(--credential); background: var(--credential-soft);
+  .btn {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 11px 18px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    transition: all .15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary {
+    background: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary-hover);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
+  }
+  .btn-primary:hover {
+    background: var(--primary-hover);
+  }
+  .btn-secondary {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+  }
+  .btn-secondary:hover {
+    background: var(--surface-hover);
+    border-color: var(--accent-border);
   }
 
-  /* contact / footer */
-  footer{ padding: 56px 0 80px; border-top: 1px solid var(--line); }
-  .contact-row{ display:flex; gap: 24px; flex-wrap: wrap; margin-top: 20px; }
-  .contact-row a{
-    font-family: var(--font-mono); font-size: 13px; text-decoration:none;
-    border-bottom: 1px solid var(--line);
+  /* ---------- PILARES DE ATUAÇÃO ---------- */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 52px;
   }
-  .contact-row a:hover{ border-color: var(--ink); }
-  .fine{ font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); margin-top: 40px; }
+  .pillar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--primary-hover);
+    border-radius: var(--radius);
+    padding: 22px;
+    transition: transform .15s ease, border-color .15s ease;
+  }
+  .pillar-card:hover {
+    border-color: var(--accent-border);
+  }
+  .pillar-title {
+    font-family: var(--font-display);
+    font-size: 15.5px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--text);
+  }
+  .pillar-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.55;
+  }
+  @media (max-width: 760px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- SEÇÕES ---------- */
+  section {
+    padding: 72px 0;
+    border-top: 1px solid var(--border);
+  }
+  .section-kicker {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 30px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+  }
+  .section-intro {
+    font-size: 16.5px;
+    color: var(--text-secondary);
+    max-width: 64ch;
+    margin: 0 0 34px;
+  }
+
+  /* ---------- SOBRE (Texto + Quadro Lateral Limpo) ---------- */
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 44px;
+    align-items: start;
+  }
+  .about-text p {
+    margin: 0 0 18px;
+    color: var(--text-secondary);
+    font-size: 16px;
+  }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-text p strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .meta-list {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin: 0;
+  }
+  .meta-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .meta-item:first-child { padding-top: 0; }
+  .meta-item:last-child { padding-bottom: 0; border-bottom: none; }
+  .meta-item dt {
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .meta-item dd {
+    margin: 0;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  @media (max-width: 760px) {
+    .about-layout { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  /* ---------- PROJETOS & CASES ---------- */
+  .cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: border-color .15s ease, background-color .15s ease;
+  }
+  .card:hover {
+    border-color: var(--accent-border);
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text);
+  }
+  .card-badge {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .card-body {
+    color: var(--text-secondary);
+    font-size: 15.5px;
+    margin: 0 0 18px;
+  }
+  .case-breakdown {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 18px 0 20px;
+  }
+  .breakdown-box {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 15px 16px;
+  }
+  .breakdown-box strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .breakdown-box span {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    display: block;
+  }
+  @media (max-width: 720px) {
+    .case-breakdown { grid-template-columns: 1fr; }
+  }
+  .tag-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 4px 10px;
+  }
+  .card-links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .card-links a {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity .15s ease;
+  }
+  .card-links a:hover {
+    opacity: 0.85;
+    text-decoration: underline;
+  }
+
+  /* ---------- CREDENCIAIS EM DESTAQUE ---------- */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .cert-card {
+    background: linear-gradient(180deg, var(--surface-alt) 0%, var(--surface) 100%);
+    border: 1px solid var(--accent-border);
+    border-radius: var(--radius);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    position: relative;
+  }
+  .cert-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .cert-seal {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .cert-verified-pill {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--verified);
+    background: var(--verified-soft);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .cert-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16.5px;
+    color: var(--text);
+    margin: 12px 0 6px;
+    line-height: 1.3;
+  }
+  .cert-issuer {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  .cert-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 14px;
+    border-radius: var(--radius-sm);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all .15s ease;
+  }
+  .cert-action:hover {
+    background: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+  }
+  .credly-banner {
+    margin-top: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  .credly-banner a {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .credly-banner a:hover { text-decoration: underline; }
+  @media (max-width: 820px) {
+    .cert-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- RODAPÉ ---------- */
+  footer {
+    padding: 64px 0 80px;
+    border-top: 1px solid var(--border);
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .footer-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+    transition: opacity .15s ease;
+  }
+  .footer-links a:hover {
+    opacity: 0.85;
+    text-decoration: underline;
+  }
+  .copyright {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 44px;
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="wrap">
-    <div class="nav-mark">CAIO CEZAR QUEIROZ</div>
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-dot"></span>
+      Caio Cezar Queiroz <span>· Product Owner</span>
+    </a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#cases">Case Studies</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#certifications">Credenciais</a></li>
+        <li><a href="#contact">Contato</a></li>
       </ul>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema claro ou escuro">
+      <button class="theme-btn" id="theme-toggle" type="button" aria-label="Alternar tema claro ou escuro">
         <span id="theme-icon">☀</span>
-        <span id="theme-label">Claro</span>
+        <span id="theme-label">Tema Claro</span>
       </button>
     </div>
   </div>
 </nav>
 
-<div class="wrap">
+<main class="container">
 
   <header class="hero">
-    <div class="eyebrow">Product Owner · SaaS B2B, ERP Integrations &amp; AI Product Management</div>
-    <h1>Product Owner que transforma<br><span>ambiguidade em decisões mensuráveis.</span></h1>
-    <p class="hero-sub">Experiência prática na evolução de produtos de automação comercial e integrações B2B. Hoje aplico essa mesma base de engenharia e dados a produtos com IA, da descoberta e priorização de backlog à avaliação objetiva de modelos de linguagem (AI Evals).</p>
+    <div class="role-badge">Product Owner · SaaS B2B, Integrações ERP &amp; AI Product Management</div>
+    <h1>Visão de produto ancorada em <span>regras de negócio e engenharia.</span></h1>
+    <p class="hero-lead">
+      Atuo na evolução de plataformas SaaS B2B de automação comercial e força de vendas, conectando descoberta de produto, integrações com ERPs e aplicações práticas de Inteligência Artificial com foco em resultado operacional.
+    </p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#projects">Ver projetos &amp; cases</a>
-      <a class="btn btn-ghost" href="/Caio_Queiroz_Curriculo.pdf" target="_blank" rel="noopener">Currículo PT (PDF)</a>
-      <a class="btn btn-ghost" href="/Caio_Queiroz_Resume.pdf" target="_blank" rel="noopener">Resume EN (PDF)</a>
-      <a class="btn btn-ghost" href="https://www.linkedin.com/in/caiocezarq/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-primary" href="#projects">Ver Projetos &amp; PRDs</a>
+      <a class="btn btn-secondary" href="/Caio_Queiroz_Curriculo.pdf" target="_blank" rel="noopener">Currículo PT (PDF)</a>
+      <a class="btn btn-secondary" href="/Caio_Queiroz_Resume.pdf" target="_blank" rel="noopener">Resume EN (PDF)</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/caiocezarq/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-secondary" href="https://github.com/caiocezarq" target="_blank" rel="noopener">GitHub</a>
     </div>
 
-    <!-- Elemento de assinatura: scorecard no estilo dos relatórios de benchmark do autor -->
-    <div class="scorecard">
-      <div class="scorecard-head">
-        <span>self_scorecard.eval</span>
-        <span>escala: 0–100</span>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <h3 class="pillar-title">Produto &amp; Estratégia B2B</h3>
+        <p class="pillar-desc">Product Discovery, recorte de MVP, priorização de backlog e definição de roadmap para plataformas de força de vendas e gestão comercial.</p>
       </div>
-      <div class="scorecard-row">
-        <span class="metric-label">Product Discovery &amp; Escopo</span>
-        <span class="metric-bar"><span style="width:90%"></span></span>
-        <span class="metric-score">90</span>
+      <div class="pillar-card">
+        <h3 class="pillar-title">Integrações ERP &amp; Dados</h3>
+        <p class="pillar-desc">Domínio de regras comerciais, tributárias e financeiras integradas via APIs REST e bancos relacionais (Oracle, SQL Server e PostgreSQL).</p>
       </div>
-      <div class="scorecard-row">
-        <span class="metric-label">Backlog &amp; Roadmap B2B</span>
-        <span class="metric-bar"><span style="width:92%"></span></span>
-        <span class="metric-score">92</span>
-      </div>
-      <div class="scorecard-row">
-        <span class="metric-label">Integrações ERP, SQL &amp; APIs</span>
-        <span class="metric-bar"><span style="width:88%"></span></span>
-        <span class="metric-score">88</span>
-      </div>
-      <div class="scorecard-row">
-        <span class="metric-label">Avaliação de LLMs (AI Evals)</span>
-        <span class="metric-bar"><span style="width:82%"></span></span>
-        <span class="metric-score">82</span>
-      </div>
-      <div class="scorecard-row">
-        <span class="metric-label">AI Product Management</span>
-        <span class="metric-bar"><span style="width:76%"></span></span>
-        <span class="metric-score">76 · evolução contínua</span>
+      <div class="pillar-card">
+        <h3 class="pillar-title">AI Product Management</h3>
+        <p class="pillar-desc">Especificação de funcionalidades com LLMs para produtos B2B, separação entre extração probabilística e motor determinístico, e validação de qualidade.</p>
       </div>
     </div>
   </header>
 
   <section id="about">
-    <div class="section-tag">[ sobre ]</div>
-    <h2>De implantação e integrações ERP a Produto e IA</h2>
-    <div class="about-grid">
-      <p class="lede">
-        Comecei minha carreira em suporte especializado e implantação de sistemas de força de vendas integrados a grandes ERPs.
-        Essa vivência prática construiu uma base técnica importante para o dia a dia em Produto: conheço modelagem de dados, APIs REST, infraestrutura em nuvem (AWS) e regras comerciais na prática, indo além do gerenciamento de tarefas no Jira.
-        <br><br>
-        Hoje atuo como Product Owner na Landix Sistemas e também desenvolvo ferramentas em Python para avaliação comparativa de modelos de linguagem (LLMs), buscando apoiar decisões técnicas e de negócio com métricas claras de qualidade, latência e custo.
-      </p>
-      <dl class="about-facts">
-        <div class="fact"><dt>Papel atual</dt><dd>Product Owner · Landix Sistemas</dd></div>
-        <div class="fact"><dt>Foco</dt><dd>Automação comercial B2B · AI Product Management</dd></div>
-        <div class="fact"><dt>Formação</dt><dd>Engenharia de Computação · UFU (2026)</dd></div>
-        <div class="fact"><dt>Idiomas</dt><dd>Português (nativo) · Inglês (avançado, TOEFL ITP C1)</dd></div>
+    <div class="section-kicker">Sobre &amp; Trajetória</div>
+    <h2>Da operação técnica e integrações ERP à gestão de Produto</h2>
+    <div class="about-layout">
+      <div class="about-text">
+        <p>
+          Construí minha trajetória dentro do ecossistema de software corporativo B2B. Antes de atuar como <strong>Product Owner</strong>, passei por suporte especializado e liderei tecnicamente implantações de sistemas de força de vendas integrados a grandes ERPs, trabalhando diretamente com bancos de dados relacionais, APIs REST e migração de ambientes para <strong>AWS</strong>.
+        </p>
+        <p>
+          Essa vivência prática aproxima produto e engenharia no dia a dia: especifico soluções conhecendo de perto como as regras comerciais se comportam no banco de dados, onde as integrações exigem cuidado e como o usuário final opera em campo.
+        </p>
+        <p>
+          Graduado em <strong>Engenharia de Computação pela UFU</strong>, uno essa bagagem em SaaS B2B à construção de especificações técnicas (PRDs), protótipos navegáveis e frameworks de avaliação comparativa para produtos com Inteligência Artificial.
+        </p>
+      </div>
+
+      <dl class="meta-list">
+        <div class="meta-item">
+          <dt>Atuação Atual</dt>
+          <dd>Product Owner · Landix Sistemas</dd>
+        </div>
+        <div class="meta-item">
+          <dt>Especialidades</dt>
+          <dd>SaaS B2B · Força de Vendas · Integrações ERP · IA Aplicada</dd>
+        </div>
+        <div class="meta-item">
+          <dt>Formação Acadêmica</dt>
+          <dd>Engenharia de Computação · UFU</dd>
+        </div>
+        <div class="meta-item">
+          <dt>Idiomas</dt>
+          <dd>Português (Nativo) · Inglês Avançado (TOEFL ITP C1)</dd>
+        </div>
       </dl>
     </div>
   </section>
 
   <section id="projects">
-    <div class="section-tag">[ projetos ]</div>
+    <div class="section-kicker">Repositórios &amp; Artefatos</div>
     <h2>Projetos em destaque</h2>
-    <p class="lede">Engenharia e visão de produto aplicadas a problemas reais de decisão técnica, especificação e priorização.</p>
+    <p class="section-intro">Especificações técnicas de produto, protótipos funcionais e ferramentas em código aberto no GitHub.</p>
 
-    <div class="project-card">
-      <div class="project-head">
-        <h3 class="project-title">LLM Comparison &amp; Evaluation Benchmark</h3>
-        <span class="status-pill">ativo · open-source</span>
-      </div>
-      <p>Framework modular em Python para avaliação comparativa e reprodutível de modelos de linguagem (proprietários e open-weight) utilizando métricas léxicas e semânticas (BLEU, ROUGE, BERTScore), benchmarks padronizados (MMLU, HellaSwag) e relatórios de consistência com EvidentlyAI.</p>
-      <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">AI Evals</span><span class="tag">LLMs</span><span class="tag">BERTScore &amp; MMLU</span><span class="tag">EvidentlyAI</span><span class="tag">Product Decision</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/caiocezarq/llm-comparison-benchmark" target="_blank" rel="noopener">Repositório no GitHub →</a>
-        <a href="#cases">Ler estudo de caso ↓</a>
-      </div>
-    </div>
+    <div class="cards-stack">
+      <article class="card">
+        <div class="card-header">
+          <h3 class="card-title">B2B &amp; AI Product PRDs</h3>
+          <span class="card-badge">Product Management · B2B &amp; ERP</span>
+        </div>
+        <p class="card-body">
+          Repositório de especificações técnicas de produto (PRDs) voltadas para plataformas SaaS B2B, automação de força de vendas, integrações com ERPs e arquitetura de funcionalidades com IA. Inclui recorte de MVP, regras de negócio, critérios de avaliação e histórias de usuário.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Product Discovery</span>
+          <span class="tag">PRD</span>
+          <span class="tag">Regras de ERP</span>
+          <span class="tag">AI Architecture</span>
+          <span class="tag">Gherkin</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/caiocezarq/product-prds" target="_blank" rel="noopener">Abrir repositório no GitHub →</a>
+          <a href="https://github.com/caiocezarq/product-prds/blob/main/prds/01-assistente-pedidos-b2b.md" target="_blank" rel="noopener">Ler PRD #1 completo →</a>
+        </div>
+      </article>
 
-    <div class="project-card">
-      <div class="project-head">
-        <h3 class="project-title">B2B &amp; AI Product PRDs</h3>
-        <span class="status-pill">ativo · open-source</span>
-      </div>
-      <p>Repositório de especificações de produto (PRDs) unindo automação de força de vendas B2B, integrações com ERPs e IA aplicada. Inclui recorte de escopo (MVP), regras de negócio, separação entre extração por IA e cálculo determinístico, critérios de avaliação (AI Evals) e histórias de usuário.</p>
-      <div class="project-tags">
-        <span class="tag">Product Discovery</span><span class="tag">PRD</span><span class="tag">Força de Vendas B2B</span><span class="tag">Integrações ERP</span><span class="tag">AI Evals</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/caiocezarq/product-prds" target="_blank" rel="noopener">Repositório no GitHub →</a>
-        <a href="https://github.com/caiocezarq/product-prds/blob/main/prds/01-assistente-pedidos-b2b.md" target="_blank" rel="noopener">Ler PRD #1 (Assistente de Pedidos B2B) →</a>
-      </div>
+      <article class="card">
+        <div class="card-header">
+          <h3 class="card-title">LLM Comparison &amp; Evaluation Benchmark</h3>
+          <span class="card-badge">Python · Qualidade de LLMs</span>
+        </div>
+        <p class="card-body">
+          Framework modular em Python para comparação objetiva e reprodutível entre modelos de linguagem (proprietários e open-weight), avaliando qualidade de resposta, similaridade semântica e benchmarks de raciocínio para apoiar decisões de arquitetura de produto.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">BERTScore &amp; ROUGE</span>
+          <span class="tag">MMLU &amp; HellaSwag</span>
+          <span class="tag">EvidentlyAI</span>
+          <span class="tag">Product Architecture</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/caiocezarq/llm-comparison-benchmark" target="_blank" rel="noopener">Abrir repositório no GitHub →</a>
+          <a href="#cases">Ver análise de decisão de produto ↓</a>
+        </div>
+      </article>
     </div>
   </section>
 
   <section id="cases">
-    <div class="section-tag">[ case studies ]</div>
-    <h2>Estudos de caso &amp; Product Thinking</h2>
-    <p class="lede">Análises de decisão de produto, especificação funcional e trade-offs técnicos.</p>
+    <div class="section-kicker">Product Thinking</div>
+    <h2>Estudos de caso e decisões de arquitetura</h2>
+    <p class="section-intro">Recortes práticos de descoberta, definição de escopo, regras de negócio e trade-offs técnicos.</p>
 
-    <div class="project-card">
-      <div class="project-head">
-        <h3 class="project-title">Case #1 · Avaliação Comparativa de LLMs para Decisões de Produto</h3>
-        <span class="status-pill">AI Product Management · Evals</span>
-      </div>
-      <p><strong>O Problema de Produto:</strong> Escolher modelos de linguagem apenas com testes manuais em poucos prompts gera riscos altos em produção: custo desnecessário por token, latência elevada na jornada do usuário ou queda silenciosa de qualidade após atualizações de API.</p>
-      <div class="case-grid">
-        <div class="case-metric">
-          <strong>1. Qualidade Semântica</strong>
-          <span>Avaliação automatizada via BERTScore, ROUGE e BLEU para medir fidelidade de resposta em tarefas abertas de sumarização e geração de texto.</span>
+    <div class="cards-stack">
+      <article class="card">
+        <div class="card-header">
+          <h3 class="card-title">Case 01 · Especificação de IA para Digitação de Pedidos B2B sem Alucinação Comercial</h3>
+          <span class="card-badge">PRD #1 · Força de Vendas</span>
         </div>
-        <div class="case-metric">
-          <strong>2. Raciocínio &amp; Domínio</strong>
-          <span>Execução padronizada de MMLU e HellaSwag para testar retenção de conhecimento multitarefa e coerência contextual.</span>
+        <p class="card-body">
+          <strong>Contexto:</strong> Representantes comerciais no atacado recebem listas informais de compras por texto e gastam vários minutos buscando item a item em catálogos extensos, além de enfrentarem rejeições de sincronização no ERP por divergência de fator de embalagem ou saldo de estoque.
+        </p>
+        <div class="case-breakdown">
+          <div class="breakdown-box">
+            <strong>Separação de Camadas</strong>
+            <span>O LLM atua exclusivamente na extração estruturada em JSON (itens e quantidades). Preços, impostos, descontos e crédito permanecem 100% no motor determinístico do ERP.</span>
+          </div>
+          <div class="breakdown-box">
+            <strong>Regras Reais de Catálogo</strong>
+            <span>Conversão automática de unidades (caixa para unidade conforme fator do ERP) e uso do histórico de compras do CNPJ nos últimos 180 dias para desempate de SKUs.</span>
+          </div>
+          <div class="breakdown-box">
+            <strong>Métricas e Guardrails</strong>
+            <span>Meta de redução de 35% no tempo de montagem de pedidos longos, SLA de latência P95 abaixo de 3,5s e validação pré-lançamento sobre conjunto de pedidos reais anonimizados.</span>
+          </div>
         </div>
-        <div class="case-metric">
-          <strong>3. Governança &amp; Trade-offs</strong>
-          <span>Ranking normalizado (min-max) e relatórios EvidentlyAI para embasar o roteamento entre modelos rápidos/econômicos e modelos de maior capacidade.</span>
+        <div class="card-links">
+          <a href="https://github.com/caiocezarq/product-prds/blob/main/prds/01-assistente-pedidos-b2b.md" target="_blank" rel="noopener">Ler especificação técnica no GitHub →</a>
         </div>
-      </div>
-      <p style="margin-bottom:0;"><strong>Resultado Prático:</strong> Substitui escolhas subjetivas por uma matriz clara de <em>Qualidade × Latência × Custo</em>, permitindo direcionar tarefas estruturadas para modelos open-weight de baixa latência e reservar modelos maiores para cenários mais complexos.</p>
-      <div class="project-links">
-        <a href="https://github.com/caiocezarq/llm-comparison-benchmark" target="_blank" rel="noopener">Ver código e arquitetura no GitHub →</a>
-      </div>
-    </div>
+      </article>
 
-    <div class="project-card">
-      <div class="project-head">
-        <h3 class="project-title">Case #2 · PRD: Assistente Inteligente de Digitação de Pedidos B2B</h3>
-        <span class="status-pill">PRD · SaaS B2B &amp; ERP</span>
-      </div>
-      <p><strong>O Problema de Produto:</strong> Representantes comerciais B2B recebem listas informais de compras por texto e gastam muito tempo procurando item por item em catálogos com milhares de SKUs, além de sofrerem com rejeições de pedidos na sincronização com o ERP por divergência de embalagem ou regra comercial.</p>
-      <div class="case-grid">
-        <div class="case-metric">
-          <strong>1. IA vs. Motor Determinístico</strong>
-          <span>O LLM atua exclusivamente na extração estruturada (JSON de itens e quantidades), enquanto preços, impostos, estoque e crédito são validados nas tabelas do ERP.</span>
+      <article class="card">
+        <div class="card-header">
+          <h3 class="card-title">Case 02 · Comparação Objetiva de Qualidade entre Modelos de Linguagem (LLMs)</h3>
+          <span class="card-badge">Arquitetura de Produto &amp; IA</span>
         </div>
-        <div class="case-metric">
-          <strong>2. Dados Reais de ERP</strong>
-          <span>Tratamento de descrições abreviadas, conversão automática de unidades (CX/UN/FD) e uso do histórico de compras do CNPJ como critério de desempate.</span>
+        <p class="card-body">
+          <strong>Contexto:</strong> Escolher entre diferentes modelos de linguagem (proprietários ou open-weight) apenas com testes manuais pontuais dificulta a comparação justa de qualidade textual, compreensão de contexto e raciocínio ao definir a arquitetura de uma solução com IA.
+        </p>
+        <div class="case-breakdown">
+          <div class="breakdown-box">
+            <strong>Execução Padronizada</strong>
+            <span>Pipeline automatizado em Python que submete a mesma bateria de prompts abertos e benchmarks padronizados (MMLU e HellaSwag) aos diferentes provedores.</span>
+          </div>
+          <div class="breakdown-box">
+            <strong>Qualidade Léxica e Semântica</strong>
+            <span>Avaliação combinada de proximidade textual e equivalência de significado (BLEU, ROUGE, BERTScore) aliada a relatórios analíticos via EvidentlyAI.</span>
+          </div>
+          <div class="breakdown-box">
+            <strong>Ranking Normalizado</strong>
+            <span>Consolidação dos indicadores por normalização min-max em um ranking comparativo objetivo para fundamentar a escolha técnica do modelo.</span>
+          </div>
         </div>
-        <div class="case-metric">
-          <strong>3. Métricas &amp; Guardrails</strong>
-          <span>Meta de redução de 35% no tempo de montagem de pedidos longos, latência P95 até 3,5s e validação pré-deploy com dataset de 100 pedidos reais anonimizados.</span>
+        <div class="card-links">
+          <a href="https://github.com/caiocezarq/llm-comparison-benchmark" target="_blank" rel="noopener">Explorar código e relatórios no GitHub →</a>
         </div>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/caiocezarq/product-prds/blob/main/prds/01-assistente-pedidos-b2b.md" target="_blank" rel="noopener">Ler especificação completa (PRD #1) no GitHub →</a>
-      </div>
+      </article>
     </div>
   </section>
 
   <section id="certifications">
-    <div class="section-tag">[ certificações ]</div>
-    <h2>Certificações &amp; credenciais</h2>
-    <ul class="cert-list">
-      <li>
+    <div class="section-kicker">Credenciais &amp; Certificações</div>
+    <h2>Certificações verificadas</h2>
+    <p class="section-intro">Credenciais oficiais em Gestão de Produto com IA, agilidade e proficiência no idioma inglês.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card">
         <div>
-          <div class="cert-name">AI for Product Management</div>
-          <div class="cert-issuer">Pendo · 2026</div>
+          <div class="cert-top">
+            <div class="cert-seal">AI</div>
+            <span class="cert-verified-pill">✓ Verificada</span>
+          </div>
+          <h3 class="cert-title">AI for Product Management</h3>
+          <p class="cert-issuer">Emitida por <strong>Pendo.io</strong> · Estratégia de Produto com IA, Discovery e Adoção</p>
         </div>
-        <a class="cert-badge" href="https://www.credly.com/badges/c7aa65c8-5c2d-4eb7-9376-982b42160b48" target="_blank" rel="noopener" style="text-decoration:none;">verificado no Credly →</a>
-      </li>
-      <li>
+        <a class="cert-action" href="https://www.credly.com/badges/c7aa65c8-5c2d-4eb7-9376-982b42160b48" target="_blank" rel="noopener">Verificar badge no Credly ↗</a>
+      </div>
+
+      <div class="cert-card">
         <div>
-          <div class="cert-name">Scrum Foundation Professional Certification (SFPC™)</div>
-          <div class="cert-issuer">Certiprof · 2024</div>
+          <div class="cert-top">
+            <div class="cert-seal">PM</div>
+            <span class="cert-verified-pill">✓ Verificada</span>
+          </div>
+          <h3 class="cert-title">Scrum Foundation Professional (SFPC™)</h3>
+          <p class="cert-issuer">Emitida por <strong>CertiProf</strong> · Práticas Ágeis, Gestão de Backlog e Delivery</p>
         </div>
-        <a class="cert-badge" href="https://www.credly.com/badges/67b080f3-25f2-41c7-b94a-610db9a120ba" target="_blank" rel="noopener" style="text-decoration:none;">verificado no Credly →</a>
-      </li>
-    </ul>
-    <div class="callout" style="margin-top:12px;">
-      Ver todas as credenciais verificadas em <a href="https://www.credly.com/users/caiocezarq" target="_blank" rel="noopener">credly.com/users/caiocezarq</a>
+        <a class="cert-action" href="https://www.credly.com/badges/67b080f3-25f2-41c7-b94a-610db9a120ba" target="_blank" rel="noopener">Verificar badge no Credly ↗</a>
+      </div>
+
+      <div class="cert-card">
+        <div>
+          <div class="cert-top">
+            <div class="cert-seal">C1</div>
+            <span class="cert-verified-pill">✓ Certificada</span>
+          </div>
+          <h3 class="cert-title">TOEFL ITP · Inglês Avançado (Nível C1)</h3>
+          <p class="cert-issuer">Emitida por <strong>ETS</strong> · Proficiência avançada para atuação internacional e times globais</p>
+        </div>
+        <a class="cert-action" href="/Caio_Queiroz_Resume.pdf" target="_blank" rel="noopener">Ver Resume em Inglês (PDF) ↗</a>
+      </div>
+    </div>
+
+    <div class="credly-banner">
+      <span>Todas as badges digitais podem ser auditadas diretamente no perfil público do Credly.</span>
+      <a href="https://www.credly.com/users/caiocezarq" target="_blank" rel="noopener">Acessar credly.com/users/caiocezarq →</a>
     </div>
   </section>
 
   <footer id="contact">
-    <div class="section-tag">[ contato ]</div>
-    <h2>Vamos conversar sobre produto, dados e IA</h2>
-    <p class="lede">Aberto a conexões e oportunidades em Product Ownership, Technical PM e AI Product Management (Brasil e remoto internacional).</p>
-    <div class="contact-row">
+    <div class="section-kicker">Contato</div>
+    <h2>Vamos conversar sobre Produto, Dados e IA</h2>
+    <p class="section-intro">
+      Aberto a conexões e oportunidades como Product Owner, Product Manager ou Technical / AI PM no Brasil e em operações globais remotas.
+    </p>
+    <div class="footer-links">
       <a href="mailto:caio.queiroz@outlook.com.br">caio.queiroz@outlook.com.br</a>
       <a href="https://www.linkedin.com/in/caiocezarq/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/caiocezarq" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.credly.com/users/caiocezarq" target="_blank" rel="noopener">Credly</a>
-      <a href="https://linktr.ee/caiocezarq" target="_blank" rel="noopener">Linktree</a>
       <a href="/Caio_Queiroz_Curriculo.pdf" target="_blank" rel="noopener">Currículo PT (PDF)</a>
       <a href="/Caio_Queiroz_Resume.pdf" target="_blank" rel="noopener">Resume EN (PDF)</a>
     </div>
-    <div class="fine">© <span id="year"></span> Caio Cezar Queiroz · construído com HTML/CSS puro, hospedado via GitHub Pages.</div>
+    <div class="copyright">© <span id="year"></span> Caio Cezar Queiroz</div>
   </footer>
 
-</div>
+</main>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -588,10 +885,10 @@
     function updateButton(theme) {
       if (theme === 'dark') {
         icon.textContent = '☀';
-        label.textContent = 'Claro';
+        label.textContent = 'Tema Claro';
       } else {
         icon.textContent = '☾';
-        label.textContent = 'Escuro';
+        label.textContent = 'Tema Escuro';
       }
     }
 
