@@ -616,8 +616,7 @@
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#about">Sobre</a></li>
-        <li><a href="#projects">Projetos</a></li>
-        <li><a href="#cases">Cases</a></li>
+        <li><a href="#projects">Projetos &amp; Cases</a></li>
         <li><a href="#certifications">Credenciais</a></li>
         <li><a href="#contact">Contato</a></li>
       </ul>
@@ -699,69 +698,18 @@
   </section>
 
   <section id="projects">
-    <div class="section-kicker">Repositórios &amp; Artefatos</div>
-    <h2>Projetos em destaque</h2>
-    <p class="section-intro">Especificações técnicas de produto, protótipos funcionais e ferramentas em código aberto no GitHub.</p>
+    <div class="section-kicker">Projetos, PRDs &amp; Estudos de Caso</div>
+    <h2>Artefatos de produto e decisões de arquitetura</h2>
+    <p class="section-intro">Especificações técnicas (PRDs), protótipos funcionais e ferramentas em código aberto combinando descoberta de produto, regras de negócio de ERP e Inteligência Artificial.</p>
 
     <div class="cards-stack">
       <article class="card">
         <div class="card-header">
-          <h3 class="card-title">B2B &amp; AI Product PRDs</h3>
-          <span class="card-badge">Product Management · B2B &amp; ERP</span>
+          <h3 class="card-title">B2B &amp; AI Product PRDs · Assistente de Digitação de Pedidos B2B</h3>
+          <span class="card-badge">PRD #1 + Protótipo Funcional · Força de Vendas &amp; ERP</span>
         </div>
         <p class="card-body">
-          Repositório de especificações técnicas de produto (PRDs) voltadas para plataformas SaaS B2B, automação de força de vendas, integrações com ERPs e arquitetura de funcionalidades com IA. Inclui recorte de MVP, regras de negócio, critérios de avaliação e histórias de usuário.
-        </p>
-        <div class="tag-row">
-          <span class="tag">Product Discovery</span>
-          <span class="tag">PRD</span>
-          <span class="tag">Regras de ERP</span>
-          <span class="tag">AI Architecture</span>
-          <span class="tag">Gherkin</span>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/caiocezarq/product-prds" target="_blank" rel="noopener">Abrir repositório no GitHub →</a>
-          <a href="https://github.com/caiocezarq/product-prds/blob/main/prds/01-assistente-pedidos-b2b.md" target="_blank" rel="noopener">Ler PRD #1 completo →</a>
-          <a href="https://caiocezarq.github.io/product-prds/prototype/" target="_blank" rel="noopener">Testar protótipo funcional (PRD #1) →</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-header">
-          <h3 class="card-title">LLM Comparison &amp; Evaluation Benchmark</h3>
-          <span class="card-badge">Python · Qualidade de LLMs</span>
-        </div>
-        <p class="card-body">
-          Framework modular em Python para comparação objetiva e reprodutível entre modelos de linguagem (proprietários e open-weight), avaliando qualidade de resposta, similaridade semântica e benchmarks de raciocínio para apoiar decisões de arquitetura de produto.
-        </p>
-        <div class="tag-row">
-          <span class="tag">Python</span>
-          <span class="tag">BERTScore &amp; ROUGE</span>
-          <span class="tag">MMLU &amp; HellaSwag</span>
-          <span class="tag">EvidentlyAI</span>
-          <span class="tag">Product Architecture</span>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/caiocezarq/llm-comparison-benchmark" target="_blank" rel="noopener">Abrir repositório no GitHub →</a>
-          <a href="#cases">Ver análise de decisão de produto ↓</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="cases">
-    <div class="section-kicker">Product Thinking</div>
-    <h2>Estudos de caso e decisões de arquitetura</h2>
-    <p class="section-intro">Recortes práticos de descoberta, definição de escopo, regras de negócio e trade-offs técnicos.</p>
-
-    <div class="cards-stack">
-      <article class="card">
-        <div class="card-header">
-          <h3 class="card-title">Case 01 · Especificação de IA para Digitação de Pedidos B2B sem Alucinação Comercial</h3>
-          <span class="card-badge">PRD #1 · Força de Vendas</span>
-        </div>
-        <p class="card-body">
-          <strong>Contexto:</strong> Representantes comerciais no atacado recebem listas informais de compras por texto e gastam vários minutos buscando item a item em catálogos extensos, além de enfrentarem rejeições de sincronização no ERP por divergência de fator de embalagem ou saldo de estoque.
+          Repositório de especificações técnicas de produto (PRDs) e prototipação funcional voltados para plataformas SaaS B2B e automação de força de vendas. O estudo de caso principal resolve o atrito de representantes comerciais que recebem listas informais de compras (por texto, áudio transcrito ou e-mail) e precisam transformá-las em pedidos válidos no ERP sem risco de alucinação comercial.
         </p>
         <div class="case-breakdown">
           <div class="breakdown-box">
@@ -777,19 +725,27 @@
             <span>Meta de redução de 35% no tempo de montagem de pedidos longos, SLA de latência P95 abaixo de 3,5s e validação pré-lançamento sobre conjunto de pedidos reais anonimizados.</span>
           </div>
         </div>
+        <div class="tag-row">
+          <span class="tag">Product Discovery</span>
+          <span class="tag">PRD &amp; Gherkin</span>
+          <span class="tag">Regras de ERP</span>
+          <span class="tag">AI Architecture</span>
+          <span class="tag">Protótipo Navegável</span>
+        </div>
         <div class="card-links">
-          <a href="https://github.com/caiocezarq/product-prds/blob/main/prds/01-assistente-pedidos-b2b.md" target="_blank" rel="noopener">Ler especificação técnica no GitHub →</a>
-          <a href="https://caiocezarq.github.io/product-prds/prototype/" target="_blank" rel="noopener">Testar protótipo navegável →</a>
+          <a href="https://caiocezarq.github.io/product-prds/prototype/" target="_blank" rel="noopener">Testar protótipo funcional (PRD #1) →</a>
+          <a href="https://github.com/caiocezarq/product-prds/blob/main/prds/01-assistente-pedidos-b2b.md" target="_blank" rel="noopener">Ler PRD #1 completo →</a>
+          <a href="https://github.com/caiocezarq/product-prds" target="_blank" rel="noopener">Abrir repositório no GitHub →</a>
         </div>
       </article>
 
       <article class="card">
         <div class="card-header">
-          <h3 class="card-title">Case 02 · Comparação Objetiva de Qualidade entre Modelos de Linguagem (LLMs)</h3>
-          <span class="card-badge">Arquitetura de Produto &amp; IA</span>
+          <h3 class="card-title">LLM Comparison &amp; Evaluation Benchmark</h3>
+          <span class="card-badge">Python · Qualidade de LLMs &amp; Arquitetura</span>
         </div>
         <p class="card-body">
-          <strong>Contexto:</strong> Escolher entre diferentes modelos de linguagem (proprietários ou open-weight) apenas com testes manuais pontuais dificulta a comparação justa de qualidade textual, compreensão de contexto e raciocínio ao definir a arquitetura de uma solução com IA.
+          Framework modular em Python para comparação objetiva e reprodutível entre modelos de linguagem (proprietários e open-weight), estruturado para evitar escolhas baseadas apenas em testes manuais pontuais e apoiar decisões técnicas de qualidade textual, compreensão de contexto e raciocínio.
         </p>
         <div class="case-breakdown">
           <div class="breakdown-box">
@@ -804,6 +760,13 @@
             <strong>Ranking Normalizado</strong>
             <span>Consolidação dos indicadores por normalização min-max em um ranking comparativo objetivo para fundamentar a escolha técnica do modelo.</span>
           </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">BERTScore &amp; ROUGE</span>
+          <span class="tag">MMLU &amp; HellaSwag</span>
+          <span class="tag">EvidentlyAI</span>
+          <span class="tag">Product Architecture</span>
         </div>
         <div class="card-links">
           <a href="https://github.com/caiocezarq/llm-comparison-benchmark" target="_blank" rel="noopener">Explorar código e relatórios no GitHub →</a>
